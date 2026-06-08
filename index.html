@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybrog Systems | AI Automation & n8n Workflows</title>
+    <meta name="description" content="Cybrog Systems provides state-of-the-art AI Automation, Website Development, WhatsApp AI Agents, and n8n Workflows. MSME Registered UDYAM-MH-23-0408040.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Hero Particle Canvas Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <a href="#" class="logo" id="nav-logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="mini-eye">
+                        <circle cx="50" cy="50" r="45" stroke="rgba(37, 99, 235, 0.3)" stroke-width="4" />
+                        <circle cx="50" cy="50" r="45" stroke="url(#mini-eye-grad)" stroke-width="2.5" stroke-dasharray="80 30" class="mini-iris-spin" />
+                        <path d="M 15 50 C 30 25, 70 25, 85 50 C 70 75, 30 75, 15 50 Z" stroke="rgba(255,255,255,0.2)" stroke-width="3" fill="rgba(15, 23, 42, 0.6)" />
+                        <!-- pupil -->
+                        <g class="mini-pupil">
+                            <circle cx="50" cy="50" r="12" fill="url(#mini-eye-grad)" />
+                            <circle cx="50" cy="50" r="5" fill="#fff" />
+                        </g>
+                        <!-- scan line -->
+                        <line x1="20" y1="50" x2="80" y2="50" stroke="#06B6D4" stroke-width="2" class="mini-scan" />
+                        <defs>
+                            <linearGradient id="mini-eye-grad" x1="0" y1="0" x2="100" y2="100">
+                                <stop offset="0%" stop-color="#06B6D4" />
+                                <stop offset="100%" stop-color="#2563EB" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </span>
+                <div class="logo-text-wrapper">
+                    <span class="logo-text">CYBROG <span class="accent-text">SYSTEMS</span></span>
+                    <span class="logo-tagline">AUTOMATING THE FUTURE</span>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#simulator">n8n Simulator</a>
+                <a href="#chatbot">WhatsApp Bot</a>
+                <a href="#credentials">Verification</a>
+                <a href="#contact" class="btn btn-nav">Get Started</a>
+            </nav>
+            <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-nav">
+        <nav class="mobile-nav-links">
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="#simulator" class="mobile-link">n8n Simulator</a>
+            <a href="#chatbot" class="mobile-link">WhatsApp Bot</a>
+            <a href="#credentials" class="mobile-link">Verification</a>
+            <a href="#contact" class="mobile-link btn btn-primary">Get Started</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge hero-badge">Next-Gen Automation</div>
+                    <h1>Unleash the Power of <br><span class="gradient-text">Intelligent Workflows</span></h1>
+                    <p class="hero-subtitle">We design and deploy autonomous AI agents, enterprise-grade website ecosystems, custom WhatsApp bots, and frictionless n8n integrations to supercharge your business growth.</p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">Book Free Consultation</a>
+                        <a href="#simulator" class="btn btn-secondary">See It In Action</a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="cyborg-eye-container">
+                        <div class="floating-sphere glow-blue"></div>
+                        <div class="floating-sphere glow-cyan"></div>
+                        <div class="tech-grid-overlay"></div>
+                        
+                        <!-- Interactive Cyborg Eye SVG -->
+                        <div class="hero-eye-wrapper">
+                            <svg class="hero-eye" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="iris-grad" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0%" stop-color="#06B6D4" />
+                                        <stop offset="100%" stop-color="#2563EB" />
+                                    </linearGradient>
+                                    <radialGradient id="pupil-grad" cx="50%" cy="50%" r="50%">
+                                        <stop offset="0%" stop-color="#fff" />
+                                        <stop offset="60%" stop-color="#06B6D4" />
+                                        <stop offset="100%" stop-color="#2563EB" />
+                                    </radialGradient>
+                                    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feGaussianBlur stdDeviation="8" result="blur" />
+                                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                    </filter>
+                                </defs>
+                                
+                                <!-- Circuit Traces (Background) -->
+                                <g class="circuit-traces" stroke="rgba(6, 182, 212, 0.18)" stroke-width="1.5" fill="none">
+                                    <!-- Left side traces -->
+                                    <path d="M 50 150 L 10 150 L -10 130" />
+                                    <path d="M 70 120 L 30 90 L 30 50" />
+                                    <path d="M 70 180 L 30 210 L -10 210" />
+                                    <!-- Right side traces -->
+                                    <path d="M 250 150 L 290 150 L 310 170" />
+                                    <path d="M 230 120 L 270 90 L 270 50" />
+                                    <path d="M 230 180 L 270 210 L 310 210" />
+                                    
+                                    <!-- Circuit Nodes -->
+                                    <circle cx="-10" cy="130" r="3" fill="#06B6D4" class="circuit-node" />
+                                    <circle cx="30" cy="50" r="3" fill="#2563EB" class="circuit-node" />
+                                    <circle cx="-10" cy="210" r="3" fill="#06B6D4" class="circuit-node" />
+                                    <circle cx="310" cy="170" r="3" fill="#2563EB" class="circuit-node" />
+                                    <circle cx="270" cy="50" r="3" fill="#06B6D4" class="circuit-node" />
+                                    <circle cx="310" cy="210" r="3" fill="#2563EB" class="circuit-node" />
+                                </g>
+                                
+                                <!-- Outer Hexagonal Tech Frame -->
+                                <polygon points="150,25 258,87 258,212 150,275 42,212 42,87" 
+                                         stroke="rgba(37, 99, 235, 0.3)" stroke-width="3" fill="none" class="hex-frame" />
+                                <polygon points="150,35 249,92 249,207 150,265 51,207 51,92" 
+                                         stroke="url(#iris-grad)" stroke-width="1.5" stroke-dasharray="20 10 5 10" fill="none" class="hex-frame-inner" />
+                                
+                                <!-- Sclera (Tech Eye Contour) -->
+                                <path d="M 50 150 C 90 90, 210 90, 250 150 C 210 210, 90 210, 50 150 Z" 
+                                      stroke="rgba(255,255,255,0.15)" stroke-width="2" fill="rgba(15, 23, 42, 0.6)" class="eye-contour" />
+                                
+                                <!-- Iris Group (tracked via JS) -->
+                                <g class="eye-iris">
+                                    <!-- Iris outer grid -->
+                                    <circle cx="150" cy="150" r="55" stroke="url(#iris-grad)" stroke-width="2.5" stroke-dasharray="15 8" fill="none" class="iris-ring-1" />
+                                    <circle cx="150" cy="150" r="42" stroke="rgba(6, 182, 212, 0.4)" stroke-width="1" stroke-dasharray="4 4" fill="none" class="iris-ring-2" />
+                                    <!-- Tech tick marks -->
+                                    <path d="M 150 100 L 150 105 M 150 200 L 150 195 M 100 150 L 105 150 M 200 150 L 195 150" stroke="#06B6D4" stroke-width="2" />
+                                </g>
+                                
+                                <!-- Pupil Group (tracked via JS) -->
+                                <g class="eye-pupil">
+                                    <circle cx="150" cy="150" r="22" fill="url(#pupil-grad)" filter="url(#glow)" />
+                                    <circle cx="150" cy="150" r="10" fill="#ffffff" />
+                                    <!-- Aperture blade lines -->
+                                    <line x1="135" y1="135" x2="142" y2="142" stroke="#0f172a" stroke-width="1.5" />
+                                    <line x1="165" y1="165" x2="158" y2="158" stroke="#0f172a" stroke-width="1.5" />
+                                    <line x1="165" y1="135" x2="158" y2="142" stroke="#0f172a" stroke-width="1.5" />
+                                    <line x1="135" y1="165" x2="142" y2="158" stroke="#0f172a" stroke-width="1.5" />
+                                </g>
+                                
+                                <!-- Scan Line -->
+                                <line id="scanner" x1="60" y1="150" x2="240" y2="150" stroke="#06B6D4" stroke-width="2.5" opacity="0.8" filter="url(#glow)" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MSME Registration Seal Ribbon -->
+        <section class="trust-ribbon">
+            <div class="container trust-container">
+                <div class="trust-badge-card">
+                    <div class="trust-icon">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <div class="trust-details">
+                        <span class="trust-label">OFFICIALLY REGISTERED MSME ENTERPRISE</span>
+                        <span class="trust-val">UDYAM-MH-23-0408040</span>
+                    </div>
+                </div>
+                <div class="trust-logo-list">
+                    <span class="gov-text">Government of India Registered</span>
+                    <span class="gov-divider">|</span>
+                    <span class="gov-text">UDYAM Enterprise Certificate Verified</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Grid Section -->
+        <section class="services-section" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <div class="badge">Our Core Expertise</div>
+                    <h2>Services Tailored for <br><span class="gradient-text">Enterprise Growth</span></h2>
+                    <p>We blend intelligence with engineering, building systems that think, react, and automate.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <!-- Service 1: AI Automation -->
+                    <div class="service-card" id="service-ai">
+                        <div class="card-glow"></div>
+                        <div class="card-icon icon-cyan">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2a10 10 0 0 1 7.54 16.59c-.24.25-.6.37-.93.31A1 1 0 0 0 17 20v1a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-1a1 1 0 0 0-.61-.9c-.33-.06-.69.06-.93.31A10 10 0 0 1 12 2z"/>
+                                <path d="M9 10h6"/>
+                                <path d="M9 14h6"/>
+                                <path d="M12 6v2"/>
+                            </svg>
+                        </div>
+                        <h3>AI Automation</h3>
+                        <p>Deploy custom LLMs, autonomous agents, and smart algorithms directly into your operations. We build pipelines that read, decide, and perform knowledge tasks dynamically.</p>
+                        <ul class="card-features">
+                            <li>Custom LLM Integrations</li>
+                            <li>Autonomous Intelligent Agents</li>
+                            <li>Cognitive Data Ingestion</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 2: Website Development -->
+                    <div class="service-card" id="service-web">
+                        <div class="card-glow"></div>
+                        <div class="card-icon icon-purple">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h3>Website Development</h3>
+                        <p>Stunning, blazingly-fast web ecosystems built on modern stacks. We craft pixel-perfect websites optimized for conversion, organic reach, and responsive interactions.</p>
+                        <ul class="card-features">
+                            <li>Responsive UI/UX</li>
+                            <li>SEO & Speed Optimization</li>
+                            <li>Full-Stack Web Applications</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 3: WhatsApp AI Agents -->
+                    <div class="service-card" id="service-whatsapp">
+                        <div class="card-glow"></div>
+                        <div class="card-icon icon-green">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                            </svg>
+                        </div>
+                        <h3>WhatsApp AI Agents</h3>
+                        <p>Turn WhatsApp into a high-converting sales representative and 24/7 client support hub. Integrate backend tools so the bot handles ordering, booking, and complex queries instantly.</p>
+                        <ul class="card-features">
+                            <li>24/7 Smart Conversations</li>
+                            <li>CRM & Databases Sync</li>
+                            <li>Order & Booking Handlers</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 4: n8n Workflows -->
+                    <div class="service-card" id="service-n8n">
+                        <div class="card-glow"></div>
+                        <div class="card-icon icon-red">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8l-5-5z"/>
+                                <polyline points="14 3 14 8 19 8"/>
+                                <path d="M9 15h6"/>
+                                <path d="M12 12v6"/>
+                            </svg>
+                        </div>
+                        <h3>n8n Workflows</h3>
+                        <p>Connect your entire software stack securely. We orchestrate triggers and node actions with n8n to synchronize data, coordinate alerts, and eliminate administrative overhead.</p>
+                        <ul class="card-features">
+                            <li>Complex Multi-App Sync</li>
+                            <li>Custom Node & API Hooks</li>
+                            <li>Self-Hosted Node Orchestration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive n8n Workflow Simulator Section -->
+        <section class="simulator-section" id="simulator">
+            <div class="container">
+                <div class="section-header">
+                    <div class="badge">Live Visualization</div>
+                    <h2>The n8n Automation Engine</h2>
+                    <p>Watch how we sync applications, route intelligence, and trigger customer outreach in real time. Click "Run Automation" below.</p>
+                </div>
+
+                <div class="simulator-container glass-panel">
+                    <div class="simulator-control">
+                        <button class="btn btn-primary btn-run" id="btn-run-workflow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-play">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                            <span>Run Automation</span>
+                        </button>
+                        <div class="simulator-status">
+                            <span class="status-indicator" id="wf-status-light"></span>
+                            <span class="status-text" id="wf-status-text">Engine Idle</span>
+                        </div>
+                    </div>
+
+                    <div class="workflow-canvas">
+                        <!-- Connector SVG lines that will glow -->
+                        <svg class="workflow-lines" xmlns="http://www.w3.org/2000/svg">
+                            <path id="line-1" d="M 100 120 L 250 120" />
+                            <path id="line-2" d="M 330 120 L 480 120" />
+                            <path id="line-3" d="M 560 120 L 710 120" />
+                            <path id="line-4" d="M 790 120 L 940 120" />
+                        </svg>
+
+                        <div class="workflow-nodes">
+                            <!-- Node 1: Trigger -->
+                            <div class="wf-node" id="node-trigger" data-step="1">
+                                <div class="node-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                        <polyline points="14 2 14 8 19 8"/>
+                                        <line x1="16" y1="13" x2="8" y2="13"/>
+                                        <line x1="16" y1="17" x2="8" y2="17"/>
+                                        <polyline points="10 9 9 9 8 9"/>
+                                    </svg>
+                                </div>
+                                <div class="node-info">
+                                    <div class="node-title">Form Trigger</div>
+                                    <div class="node-subtitle">Web Lead Inbound</div>
+                                </div>
+                                <div class="node-pulse"></div>
+                            </div>
+
+                            <!-- Node 2: n8n Router -->
+                            <div class="wf-node" id="node-router" data-step="2">
+                                <div class="node-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="16 3 21 3 21 8"/>
+                                        <line x1="4" y1="20" x2="21" y2="3"/>
+                                        <polyline points="21 16 21 21 16 21"/>
+                                        <line x1="15" y1="15" x2="21" y2="21"/>
+                                        <line x1="4" y1="4" x2="9" y2="9"/>
+                                    </svg>
+                                </div>
+                                <div class="node-info">
+                                    <div class="node-title">n8n Gateway</div>
+                                    <div class="node-subtitle">Routes & Format</div>
+                                </div>
+                                <div class="node-pulse"></div>
+                            </div>
+
+                            <!-- Node 3: AI Engine -->
+                            <div class="wf-node" id="node-ai" data-step="3">
+                                <div class="node-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                        <path d="M12 2v9"/>
+                                        <path d="M8 5h8"/>
+                                    </svg>
+                                </div>
+                                <div class="node-info">
+                                    <div class="node-title">AI Agent</div>
+                                    <div class="node-subtitle">LLM Analysis</div>
+                                </div>
+                                <div class="node-pulse"></div>
+                            </div>
+
+                            <!-- Node 4: WhatsApp Notify -->
+                            <div class="wf-node" id="node-whatsapp" data-step="4">
+                                <div class="node-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                                    </svg>
+                                </div>
+                                <div class="node-info">
+                                    <div class="node-title">WhatsApp Bot</div>
+                                    <div class="node-subtitle">Instant Delivery</div>
+                                </div>
+                                <div class="node-pulse"></div>
+                            </div>
+
+                            <!-- Node 5: CRM Sync -->
+                            <div class="wf-node" id="node-crm" data-step="5">
+                                <div class="node-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                </div>
+                                <div class="node-info">
+                                    <div class="node-title">CRM Dashboard</div>
+                                    <div class="node-subtitle">Records Synchronized</div>
+                                </div>
+                                <div class="node-pulse"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Workflow Console log output -->
+                    <div class="simulator-log">
+                        <div class="log-header">
+                            <span class="log-dot"></span>
+                            <span class="log-title">System Console</span>
+                        </div>
+                        <div class="log-body" id="console-logs">
+                            <div class="log-line text-muted">[SYSTEM] Ready to execute automation trigger...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive WhatsApp Chatbot Simulator -->
+        <section class="chatbot-section" id="chatbot">
+            <div class="container chatbot-grid">
+                <div class="chatbot-info">
+                    <div class="badge">WhatsApp Agent Mockup</div>
+                    <h2>Automate Your Customer Interactions</h2>
+                    <p>Leverage fully conversational AI integrated with your databases. Experience a simulation of our custom WhatsApp AI agents. Choose a question from the chips below to see the bot answer.</p>
+                    
+                    <div class="chip-container">
+                        <button class="chat-chip" data-question="How can AI automation help my business?">🚀 How can AI help my business?</button>
+                        <button class="chat-chip" data-question="What workflows can you automate with n8n?">🔗 n8n Workflow examples?</button>
+                        <button class="chat-chip" data-question="How long does custom website development take?">💻 Website timeline?</button>
+                        <button class="chat-chip" data-question="Can you set up an agent registered to our database?">🗄️ Database integration?</button>
+                    </div>
+                </div>
+
+                <div class="phone-mockup">
+                    <div class="phone-header">
+                        <div class="phone-camera"></div>
+                        <div class="whatsapp-bar">
+                            <div class="bot-avatar">CS</div>
+                            <div class="bot-status">
+                                <span class="bot-name">Cybrog Systems Bot</span>
+                                <span class="bot-online-indicator">Online</span>
+                            </div>
+                            <div class="whatsapp-icons">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M23 7a2 2 0 0 0-2.45-1.45L12 8 3 5.55A2 2 0 0 0 1 7.3v9.4a2 2 0 0 0 1.55 1.95L12 21l9.45-2.35A2 2 0 0 0 23 16.7V7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="phone-screen" id="chat-messages-container">
+                        <!-- Message bubble 1: Welcome -->
+                        <div class="message received">
+                            Hi! I am the automated agent for Cybrog Systems. Let me show you what we can do. Select any prompt chip on the left to start!
+                            <span class="message-time">12:00 AM</span>
+                        </div>
+                    </div>
+
+                    <div class="phone-footer">
+                        <div class="chat-input" id="dummy-input">Click a chip on the left...</div>
+                        <button class="chat-send-btn" id="dummy-send">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MSME Credentials & Trust Verification Section -->
+        <section class="credentials-section" id="credentials">
+            <div class="container">
+                <div class="credentials-grid">
+                    <div class="credentials-visual">
+                        <div class="certificate-mockup glass-panel">
+                            <div class="cert-header">
+                                <span class="cert-emblem">🇮🇳</span>
+                                <h4>GOVERNMENT OF INDIA</h4>
+                                <h5>Ministry of Micro, Small and Medium Enterprises</h5>
+                            </div>
+                            <div class="cert-body">
+                                <h3>UDYAM REGISTRATION CERTIFICATE</h3>
+                                <div class="cert-field">
+                                    <span class="label">REGISTRATION NUMBER</span>
+                                    <span class="valueHighlight">UDYAM-MH-23-0408040</span>
+                                </div>
+                                <div class="cert-field">
+                                    <span class="label">ENTERPRISE NAME</span>
+                                    <span class="value">CYBROG SYSTEMS</span>
+                                </div>
+                                <div class="cert-field">
+                                    <span class="label">SERVICES RENDERED</span>
+                                    <span class="value">AI Automation & Integrations, Software, Web Platforms</span>
+                                </div>
+                                <div class="cert-footer">
+                                    <span class="stamp">VERIFIED ACTIVE</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="credentials-info">
+                        <div class="badge">Government Registered</div>
+                        <h2>Fully Compliant & Certified Systems Provider</h2>
+                        <p>Cybrog Systems is officially registered with the Ministry of Micro, Small, and Medium Enterprises (MSME) under Udyam registration ID: **UDYAM-MH-23-0408040**.</p>
+                        <p>This registration underscores our operational commitment, ensuring corporate security, transparency, and a reliable partnership framework for MSME-scale organizations to major enterprises.</p>
+                        <div class="benefits-row">
+                            <div class="benefit-item">
+                                <span class="benefit-num">01</span>
+                                <span class="benefit-txt">Secure, standardized corporate protocols</span>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-num">02</span>
+                                <span class="benefit-txt">Compliant invoicing & contract terms</span>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-num">03</span>
+                                <span class="benefit-txt">Government-backed tech solutions delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container contact-container">
+                <div class="section-header">
+                    <div class="badge">Consultation</div>
+                    <h2>Build Your Digital Future</h2>
+                    <p>Contact Cybrog Systems. Outline your challenges and our engineers will model a bespoke automation blueprint for your organization.</p>
+                </div>
+
+                <div class="contact-grid-layout">
+                    <!-- Left: Contact Details Panel -->
+                    <div class="contact-info-panel glass-panel">
+                        <h3>Contact Details</h3>
+                        <p class="panel-subtitle">Official business credentials & communications.</p>
+                        
+                        <div class="info-items">
+                            <div class="info-item">
+                                <span class="info-icon">📧</span>
+                                <div class="info-text">
+                                    <span class="label">Email Address</span>
+                                    <span class="value"><a href="mailto:contact@cybrogsystems.eu.org">contact@cybrogsystems.eu.org</a></span>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <span class="info-icon">🕒</span>
+                                <div class="info-text">
+                                    <span class="label">Business Hours</span>
+                                    <span class="value">Monday - Saturday</span>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <span class="info-icon">💼</span>
+                                <div class="info-text">
+                                    <span class="label">MSME Registration</span>
+                                    <span class="value">UDYAM-MH-23-0408040</span>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <span class="info-icon">🌐</span>
+                                <div class="info-text">
+                                    <span class="label">Operational Country</span>
+                                    <span class="value">India (Maharashtra)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Form Wrapper -->
+                    <div class="contact-card-wrapper glass-panel">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-name">Your Name</label>
+                                    <input type="text" id="form-name" placeholder="John Doe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-email">Business Email</label>
+                                    <input type="email" id="form-email" placeholder="john@company.com" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-interest">Primary Area of Interest</label>
+                                <select id="form-interest" required>
+                                    <option value="" disabled selected>Select a Service</option>
+                                    <option value="AI Automation">AI Automation & Custom LLMs</option>
+                                    <option value="Website Development">Website & Full-Stack Development</option>
+                                    <option value="WhatsApp AI Agents">WhatsApp AI Conversational Agents</option>
+                                    <option value="n8n Workflows">n8n Systems Integration</option>
+                                    <option value="Comprehensive Strategy">End-to-End Digital Transformation</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-message">Brief Project Summary</label>
+                                <textarea id="form-message" rows="5" placeholder="Tell us about the workflow or website you'd like to build..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit" id="btn-submit-form">
+                                <span>Submit Request</span>
+                                <div class="submit-spinner hidden"></div>
+                            </button>
+                        </form>
+
+                        <!-- Success overlay -->
+                        <div class="success-overlay hidden" id="form-success">
+                            <div class="success-circle">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <h3>Consultation Registered!</h3>
+                            <p>Thank you for contacting Cybrog Systems. An automation architect will review your project summary and email you to schedule a deep-dive call within 24 hours.</p>
+                            <button class="btn btn-secondary" id="btn-reset-form">Send Another Message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span class="logo-text">CYBROG <span class="accent-text">SYSTEMS</span></span>
+                </a>
+                <p>Developing intelligent architectures, high-performance web ecosystems, and integrated workflow automations.</p>
+                <div class="msme-badge-small">
+                    MSME Reg: UDYAM-MH-23-0408040
+                </div>
+            </div>
+            
+            <div class="footer-links-col">
+                <h4>Services</h4>
+                <a href="#services">AI Automation</a>
+                <a href="#services">Website Development</a>
+                <a href="#services">WhatsApp AI Agents</a>
+                <a href="#services">n8n Workflows</a>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Interactive Demo</h4>
+                <a href="#simulator">n8n Simulator</a>
+                <a href="#chatbot">WhatsApp Agent</a>
+                <a href="#credentials">UDYAM Certificate</a>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Contact Info</h4>
+                <p class="footer-contact-item">📧 contact@cybrogsystems.eu.org</p>
+                <p class="footer-contact-item">🕒 Mon - Sat (Business Hours)</p>
+                <p class="footer-contact-item">💼 UDYAM-MH-23-0408040</p>
+                <p class="footer-contact-item">📍 Maharashtra, India</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2026 Cybrog Systems. All rights reserved. Registered MSME Enterprise.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
